@@ -1,6 +1,7 @@
 package main
 
 import (
+	"curso_goland_platzi/src/mypackage"
 	"fmt"
 	"log"
 	"strconv"
@@ -8,6 +9,26 @@ import (
 
 func dobleRetorno(a int) (int, int) {
 	return 5, 6
+}
+
+func isPalindromo(text string) {
+	var textReverse string
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es Palindromo")
+	} else {
+		fmt.Println("NO Es Palindromo")
+	}
+
+}
+
+type car struct {
+	brand string
+	year  int
 }
 
 func main() {
@@ -100,13 +121,48 @@ func main() {
 	slice = append(slice, newSlice...)
 	fmt.Println(slice)
 
+	// Recorrer slice
+	slice2 := []string{"hola", "que", "hace"}
 
+	for i, valor := range slice2 {
+		fmt.Println(i, valor)
+	}
 
+	//Palindromo
+	isPalindromo("amo")
 
+	// LLave Valor
+	m := make(map[string]int)
 
+	m["Jose"] = 14
+	m["Pepito"] = 20
 
+	fmt.Println(m)
 
+	// Recorrer map
+	for llave, valor := range m {
+		fmt.Println(llave, valor)
+	}
 
+	// Encontrar valor
+	value, ok := m["Jose"]
+	fmt.Println(value, ok)
 
+	// Structs
+	myCar := car{brand: "Ford", year: 2020}
+	fmt.Println(myCar)
+
+	// Structs 2
+	var myCar2 car
+	myCar2.brand = "Ferrari"
+	myCar2.year = 2021
+	fmt.Println(myCar2)
+
+	var myCar3 mypackage.CarPublic
+	myCar3.Brand = "Honda"
+	myCar3.Year = 2021
+	fmt.Println(myCar3)
+
+	mypackage.PrintMessage()
 
 }
