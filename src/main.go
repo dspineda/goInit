@@ -7,6 +7,17 @@ import (
 	"strconv"
 )
 
+type pc struct {
+	ram   int
+	disco int
+	proce string
+}
+
+func (myPc pc) String() string {
+	return fmt.Sprintf("Tengo %d GB de RAM, %d GB de disco duro y un procesador %s", myPc.ram, myPc.disco, myPc.proce)
+}
+
+
 func dobleRetorno(a int) (int, int) {
 	return 5, 6
 }
@@ -164,5 +175,9 @@ func main() {
 	fmt.Println(myCar3)
 
 	mypackage.PrintMessage()
+
+	// myPc 
+	myPc := pc{ram: 16, disco: 500, proce: "Intel"}
+	fmt.Println(myPc)
 
 }
