@@ -176,8 +176,9 @@ func main() {
 
 	mypackage.PrintMessage()
 
-	// myPc 
+	// myPc
 	myPc := pc{ram: 16, disco: 500, proce: "Intel"}
 	fmt.Println(myPc)
 
 }
+
